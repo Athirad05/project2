@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Orange Hrm</td>
+      <td>05 Jun 2022, 18:57</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">Common_Step_Definition.beforeScenario(Scenario)</td>
+              <td>2</td>
+              <td class="duration" data-value="17778441200">17.778</td>
+              <td class="duration" data-value="17778441200">35.555</td>
+              <td class="duration" data-value="35556882400">35.556</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifyceoname.clicks_the_search_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1846220500">1.846</td>
+              <td class="duration" data-value="1846220500">1.846</td>
+              <td class="duration" data-value="1846220500">1.846</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifyceoname.the_user_clicks_on_the_directory_option_from_the_Menu_bar()</td>
+              <td>1</td>
+              <td class="duration" data-value="7830420100">7.830</td>
+              <td class="duration" data-value="7830420100">7.830</td>
+              <td class="duration" data-value="7830420100">7.830</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifyceoname.the_user_is_logged_in_sucessfully_and_is_on_Home_Page()</td>
+              <td>1</td>
+              <td class="duration" data-value="11626600">0.011</td>
+              <td class="duration" data-value="11626600">0.011</td>
+              <td class="duration" data-value="11626600">0.011</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifyceoname.the_user_selects_the_job_title_as_from_the_drop_down(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="797708400">0.797</td>
+              <td class="duration" data-value="797708400">0.797</td>
+              <td class="duration" data-value="797708400">0.797</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifyceoname.the_user_should_see_the_CEO_name_as(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="95956800">0.095</td>
+              <td class="duration" data-value="95956800">0.095</td>
+              <td class="duration" data-value="95956800">0.095</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifytimesheet.clicks_on_the_view_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="35300">0.000</td>
+              <td class="duration" data-value="35300">0.000</td>
+              <td class="duration" data-value="35300">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifytimesheet.the_user_clickson_the_time_option_from_the_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="4704694100">4.704</td>
+              <td class="duration" data-value="4704694100">4.704</td>
+              <td class="duration" data-value="4704694100">4.704</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifytimesheet.the_user_enters_the_name_as(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="610572500">0.610</td>
+              <td class="duration" data-value="610572500">0.610</td>
+              <td class="duration" data-value="610572500">0.610</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifytimesheet.the_user_is_on_the_homepage()</td>
+              <td>1</td>
+              <td class="duration" data-value="5837400">0.005</td>
+              <td class="duration" data-value="5837400">0.005</td>
+              <td class="duration" data-value="5837400">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Verifytimesheet.the_user_should_see_the_message_as(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="18000">0.000</td>
+              <td class="duration" data-value="18000">0.000</td>
+              <td class="duration" data-value="18000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>11</td>
+            <td>12</td>
+            <td class="duration">4.288</td>
+            <td class="duration">35.556</td>
+            <td class="duration">51.459</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
